@@ -1,0 +1,26 @@
+package kr.or.ddit.memo.service;
+
+import kr.or.ddit.common.enumpkg.ServiceResult;
+import kr.or.ddit.memo.dao.MemoAthenticateDAO;
+import kr.or.ddit.memo.dao.MemoAthenticateDAOImpl;
+import kr.or.ddit.vo.MemoVO;
+
+public class MemoAthenticateServiceImpl implements MemoAthenticateService {
+	private static MemoAthenticateService service;
+	private MemoAthenticateDAO dao = MemoAthenticateDAOImpl.getMemoAthenticateDAO();
+	
+	public static synchronized MemoAthenticateService getMemoAthenticateService() {
+		if(service==null) service = new MemoAthenticateServiceImpl();
+		return service;
+	}
+	
+	private MemoAthenticateServiceImpl() {}
+	
+	
+	@Override
+	public ServiceResult authMemo(MemoVO memoVO) {
+		int rowcnt = dao.memoAthenticate(memoVO);
+		return rowcnt>=1 ? ServiceResult.OK : ServiceResult.INVALIDEMAIL;
+	}
+
+}

@@ -1,0 +1,14 @@
+package kr.or.ddit.memo.service;
+
+import kr.or.ddit.common.enumpkg.ServiceResult;
+import kr.or.ddit.vo.MemoVO;
+
+public class MemoAthenticateServiceImpl implements MemoAthenticateService {
+	
+	@Override
+	public ServiceResult authMemo(MemoVO memoVO) {
+		
+		return null;
+	}
+
+}

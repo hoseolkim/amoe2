@@ -44,16 +44,6 @@
 			WHERE CODE = #{code}
 		</selectKey>
 	</update>
-	<select id="emailCheck" parameterType="MemoVO" resultType="int">
-		SELECT
-			COUNT(*)
-		FROM
-			MEMO
-		WHERE
-			CODE = #{code}
-		AND
-			EMAIL = #{email}
-	</select>
 	<delete id="deleteMemo" parameterType="int">
 		DELETE FROM MEMO
 		WHERE

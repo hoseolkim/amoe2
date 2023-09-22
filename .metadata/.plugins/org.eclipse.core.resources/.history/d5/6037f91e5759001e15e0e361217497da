@@ -1,0 +1,40 @@
+package kr.or.ddit.memo.service;
+
+import java.util.List;
+
+import kr.or.ddit.common.enumpkg.ServiceResult;
+import kr.or.ddit.vo.MemoVO;
+
+public class MemoServiceImpl implements MemoService {
+
+	@Override
+	public ServiceResult createMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MemoVO> retrieveMemoList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ServiceResult removeMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ServiceResult modifyMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean checkEmail(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

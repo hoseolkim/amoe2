@@ -1,0 +1,13 @@
+package kr.or.ddit.memo.dao;
+
+import kr.or.ddit.vo.MemoVO;
+
+public class MemoAthenticateDAOImpl implements MemoAthenticateDAO {
+
+	@Override
+	public int memoAthenticate(MemoVO memovO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

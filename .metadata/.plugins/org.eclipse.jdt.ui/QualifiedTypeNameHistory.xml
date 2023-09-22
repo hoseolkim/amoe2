@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.apache.commons.dbcp2.BasicDataSource"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.db.ConnectionFactory"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.adrs.dao.AddressDAOImpl"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.adrs.service.AddressService"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.adrs.service.AddressServiceImpl"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="kr.or.ddit.vo.AddressVO"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -32,8 +26,6 @@
     <fullyQualifiedTypeName name="kr.or.ddit.member.dao.MemberDAOImpl"/>
     <fullyQualifiedTypeName name="kr.or.ddit.login.service.AuthenticateService"/>
     <fullyQualifiedTypeName name="kr.or.ddit.login.service.AuthenticateServiceImpl"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.SerializationFeature"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.binding.MapperProxy"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
@@ -52,12 +44,20 @@
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
     <fullyQualifiedTypeName name="kr.or.ddit.db.MemoSqlSessionFactoryBuilder"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.memo.dao.MemoDAOImpl"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="lombok.ToString"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.common.enumpkg.ServiceResult"/>
-    <fullyQualifiedTypeName name="kr.or.ddit.vo.MemoVO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.vo.MemoVO"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.dao.MemoAthenticateDAO"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.dao.MemoAthenticateDAOImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.service.MemoAthenticateServiceImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.dao.MemoDAO"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.dao.MemoDAOImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.service.MemoServiceImpl"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.memo.service.MemoAthenticateService"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.common.enumpkg.ServiceResult"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 </qualifiedTypeNameHistroy>

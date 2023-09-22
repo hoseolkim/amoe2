@@ -56,15 +56,6 @@ public class MemoDAOImpl implements MemoDAO {
 	}
 
 	@Override
-	public int emailCheck(MemoVO memovO) {
-		try(
-			SqlSession session = sqlSessionFactory.openSession();
-		){
-			return mapper.emailCheck(memovO);
-		}
-	}
-
-	@Override
 	public int deleteMemo(int code) {
 		try(
 			SqlSession session = sqlSessionFactory.openSession();

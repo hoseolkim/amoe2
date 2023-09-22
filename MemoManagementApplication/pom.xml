@@ -82,6 +82,17 @@
 		    <artifactId>jackson-datatype-jsr310</artifactId>
 		    <version>${com.fasterxml.jackson-version}</version>
 		</dependency>
-	
+		
+		
+		
+		
+	<!-- 단위 테스트 지원 -->
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <version>5.10.0</version>
+		    <scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 </project>

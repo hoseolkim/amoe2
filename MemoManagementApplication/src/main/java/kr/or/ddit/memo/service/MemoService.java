@@ -30,10 +30,4 @@ public interface MemoService {
 	 * @return 이메일 다를 경우 INVALIDEMAIL, 실패 FAIL, 성공 OK
 	 */
 	public ServiceResult modifyMemo(MemoVO memoVO);
-	/**
-	 * 메모 작성자가 본인인지 확인
-	 * @param memoVO
-	 * @return 본인일 시 true, 아닐 시 false
-	 */
-	public boolean checkEmail(MemoVO memoVO);
 }

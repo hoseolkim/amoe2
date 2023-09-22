@@ -14,7 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 import org.junit.jupiter.api.Test;
 
-import kr.or.ddit.reflect.ReflectionTest;
 
 /**
  * Reflection
@@ -23,7 +22,7 @@ import kr.or.ddit.reflect.ReflectionTest;
  *
  */
 class ReflectionDesc {
-
+	Object obj;
 	@Test
 	void test3() {
 		String columnName = "ADRS_NO";
@@ -40,7 +39,7 @@ class ReflectionDesc {
 	
 //	@Test
 	void test2() throws IllegalArgumentException, IllegalAccessException, IntrospectionException, InvocationTargetException {
-		Object obj = ReflectionTest.getObject();
+//		Object obj = ReflectionTest.getObject();
 		Class<?> objType = obj.getClass();
 		Field[] fields = objType.getDeclaredFields();
 		for(Field fld : fields) {
@@ -69,7 +68,7 @@ class ReflectionDesc {
 	
 //	@Test
 	void test() {
-		Object obj = ReflectionTest.getObject();
+//		Object obj = ReflectionTest.getObject();
 		System.out.println(obj);
 		
 		Class<?> objType = obj.getClass();

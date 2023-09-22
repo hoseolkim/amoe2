@@ -1,0 +1,8 @@
+package kr.or.ddit.memo.service;
+
+import kr.or.ddit.common.enumpkg.ServiceResult;
+import kr.or.ddit.vo.MemoVO;
+
+public interface MemoAthenticateService {
+	public ServiceResult authMemo(MemoVO memoVO);
+}

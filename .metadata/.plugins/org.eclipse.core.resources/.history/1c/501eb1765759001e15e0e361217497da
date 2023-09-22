@@ -1,0 +1,47 @@
+package kr.or.ddit.memo.service;
+
+import java.util.List;
+
+import kr.or.ddit.common.enumpkg.ServiceResult;
+import kr.or.ddit.memo.dao.MemoDAO;
+import kr.or.ddit.memo.dao.MemoDAOImpl;
+import kr.or.ddit.vo.MemoVO;
+
+public class MemoServiceImpl implements MemoService {
+	private MemoDAO dao = MemoDAOImpl.getMemoDAO();
+	private MemoAthenticateService authService = MemoAthenticateServiceImpl.getMemoAthenticateService();
+	private static MemoService service;
+	
+	
+	private MemoServiceImpl() {}
+	
+	public static MemoService getMemoService() {
+		if(service == null) service = new MemoServiceImpl();
+		return service;
+	}
+	
+	@Override
+	public ServiceResult createMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MemoVO> retrieveMemoList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ServiceResult removeMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ServiceResult modifyMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
