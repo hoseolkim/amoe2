@@ -1,0 +1,13 @@
+package kr.or.ddit.vo;
+
+/**
+ * 한번의 사칙 연산과 관련된 모든 속성을 가진 객체.
+ *
+ */
+public class CalculateVO {
+	private int leftOp;
+	private int rightOp;
+	
+	
+	
+}

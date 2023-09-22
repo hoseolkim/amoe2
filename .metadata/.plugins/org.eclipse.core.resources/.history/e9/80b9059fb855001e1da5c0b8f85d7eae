@@ -1,0 +1,15 @@
+package kr.or.ddit.calculate.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/calculate/case1")
+public class CalculateControllerServlet extends HttpServlet {
+	
+	
+	
+	
+	
+	
+	
+}

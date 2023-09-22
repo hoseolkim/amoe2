@@ -1,0 +1,6 @@
+package kr.or.ddit.calculate;
+
+public interface BiOperandOperator {
+	@FunctionalInterface
+	public int operate(int leftOp, int rightOp);
+}

@@ -1,0 +1,39 @@
+package kr.or.ddit.calculate.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/calculate/case1")
+public class CalculateControllerServlet extends HttpServlet {
+	
+	/**
+	 * UI 제공
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		if(goPage.startsWith("redirect:")) {
+			String location = req.getContextPath() + goPage.substring("redirect:".length());
+			resp.sendRedirect(location);
+		}else {
+			req.getRequestDispatcher(goPage).forward(req, resp);
+		}
+	}
+	
+	/**
+	 * UI를 통해 입력한 데이터(parameter) 처리
+	 */
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
+	
+	
+	
+	
+}

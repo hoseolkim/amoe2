@@ -1,0 +1,75 @@
+package kr.or.ddit.calculate.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/calculate/case1")
+public class CalculateControllerServlet extends HttpServlet {
+	
+	/**
+	 * UI 제공
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String goPage = "/WEB-INF/views/calculate/calForm.jsp";
+		
+		if(goPage.startsWith("redirect:")) {
+			String location = req.getContextPath() + goPage.substring("redirect:".length());
+			resp.sendRedirect(location);
+		}else {
+			req.getRequestDispatcher(goPage).forward(req, resp);
+		}
+	}
+	
+	private boolean validate(HttpServletRequest req) {
+		boolean valid = true;
+		String leftParam = req.getParameter("leftOp");
+		String rightParam = req.getParameter("rightOp");
+		String opParam = req.getParameter("operator");
+		if(leftParam==null || leftParam.trim().isEmpty() || !leftParam.matches("\\d+")) {
+			valid &= false;
+		}
+		return valid;
+	}
+	
+	
+	
+	
+	
+	/**
+	 * UI를 통해 입력한 데이터(parameter) 처리
+	 */
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		String leftParam = req.getParameter("leftOp");
+		String rightParam = req.getParameter("rightOp");
+		String opParam = req.getParameter("operator");
+		
+		
+		
+		
+		
+		
+		
+		String goPage = null;
+		
+		
+		
+		
+		
+		
+		if(goPage.startsWith("redirect:")) {
+			String location = req.getContextPath() + goPage.substring("redirect:".length());
+			resp.sendRedirect(location);
+		}else {
+			req.getRequestDispatcher(goPage).forward(req, resp);
+		}
+	}
+}

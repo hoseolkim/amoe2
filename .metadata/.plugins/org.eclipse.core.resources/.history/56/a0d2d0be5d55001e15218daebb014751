@@ -1,0 +1,81 @@
+package kr.or.ddit.file.controller;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet(value ="/fileBrowser.do", loadOnStartup = 1)
+public class FileListSerlvetController extends HttpServlet{
+	private ServletContext application;
+	
+	private boolean isGetFile(File dir) {
+		boolean getFile = false;
+		
+		if(!dir.isDirectory()) {
+			return getFile;
+		}
+		
+		for(File f : dir.listFiles()) {
+			if(f.isFile()) {
+				getFile = true;
+			}
+		}
+		
+		return getFile;
+	}
+	
+	private List<File> getFileList(String path){
+		List<File> fileList = new ArrayList<File>();
+		
+		
+		Set<String> resources = application.getResourcePaths("/");
+		List<String> resourcesList = new ArrayList<String>(resources);
+		Map<String,File> fileList = new LinkedHashMap<String,File>();
+		Collections.sort(resourcesList);
+		for(String resource : resourcesList) {
+//			System.out.println(resource);
+			File f = new File(application.getRealPath(resource));
+			fileList.put(resource, f);
+//			if(f1.isDirectory()) {
+//				System.out.println("폴더입니다");
+//			}
+		}
+		
+		return fileList;
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		application = getServletContext();
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/WEB-INF/views/self/fileListForm.jsp").forward(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		String filePath = req.getParameter("path");
+		
+		
+		
+	}
+	
+}

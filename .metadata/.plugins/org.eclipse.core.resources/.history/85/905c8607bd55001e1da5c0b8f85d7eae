@@ -1,0 +1,110 @@
+package kr.or.ddit.calculate.controller;
+
+import java.io.IOException;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/calculate/case1")
+public class CalculateControllerServlet extends HttpServlet {
+	
+	/**
+	 * UI 제공
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String goPage = "/WEB-INF/views/calculate/calForm.jsp";
+		
+		if(goPage.startsWith("redirect:")) {
+			String location = req.getContextPath() + goPage.substring("redirect:".length());
+			resp.sendRedirect(location);
+		}else {
+			req.getRequestDispatcher(goPage).forward(req, resp);
+		}
+	}
+	
+	private boolean validate(HttpServletRequest req, Map<String, String> errors) {
+		boolean valid = true;
+		String leftParam = req.getParameter("leftOp");
+		String rightParam = req.getParameter("rightOp");
+		String opParam = req.getParameter("operator");
+		if(leftParam==null || leftParam.trim().isEmpty() || !leftParam.matches("\\d+")) {
+			valid &= false;
+			"좌측 피연산자 오류"
+		}
+		if(rightParam==null || rightParam.trim().isEmpty() || !rightParam.matches("\\d+")) {
+			valid &= false;
+			"우측 피연산자 오류"
+		}
+		if(opParam==null || opParam.trim().isEmpty() || !opParam.matches("PLUS|MINUS|MULTIPLY|DIVIDE")) {
+			valid &= false;
+			"연산자 오류"
+		}
+		return valid;
+	}
+	
+	/**
+	 * UI를 통해 입력한 데이터(parameter) 처리
+	 */
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		String leftParam = req.getParameter("leftOp");
+		String rightParam = req.getParameter("rightOp");
+		String opParam = req.getParameter("operator");
+		
+		
+		String goPage = null;
+		if(validate(req)) {
+			
+		}else {
+			req.setAttribute("message", "필수 파라미터가 누락 됐거나 데이터 타입이 잘못됐거나 데이터가 케이스가 잘못됨.");
+			goPage = "/WEB-INF/views/calculate/calForm.jsp";
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if(goPage.startsWith("redirect:")) {
+			String location = req.getContextPath() + goPage.substring("redirect:".length());
+			resp.sendRedirect(location);
+		}else {
+			req.getRequestDispatcher(goPage).forward(req, resp);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

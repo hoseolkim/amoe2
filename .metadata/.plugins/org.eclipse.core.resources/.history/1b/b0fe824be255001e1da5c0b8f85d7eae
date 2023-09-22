@@ -1,0 +1,50 @@
+package kr.or.ddit.vo;
+
+import kr.or.ddit.calculate.NumericOperatorType;
+
+/**
+ * 한번의 사칙 연산과 관련된 모든 속성을 가진 객체.
+ *
+ */
+public class CalculateVO {
+	private int leftOp;
+	private int rightOp;
+	
+	private NumericOperatorType operator;
+
+	public CalculateVO() {
+		super();
+	}
+
+	public CalculateVO(int leftOp, int rightOp, NumericOperatorType operator) {
+		super();
+		this.leftOp = leftOp;
+		this.rightOp = rightOp;
+		this.operator = operator;
+	}
+
+	public int getLeftOp() {
+		return leftOp;
+	}
+
+	public void setLeftOp(int leftOp) {
+		this.leftOp = leftOp;
+	}
+
+	public int getRightOp() {
+		return rightOp;
+	}
+
+	public void setRightOp(int rightOp) {
+		this.rightOp = rightOp;
+	}
+
+	public NumericOperatorType getOperator() {
+		return operator;
+	}
+
+	public void setOperator(NumericOperatorType operator) {
+		this.operator = operator;
+	}
+	
+}

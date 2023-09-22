@@ -1,0 +1,39 @@
+package kr.or.ddit.collection;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class SelfTest {
+	enum Operator {
+		PLUS("+"),
+		MINUS("-"),
+		MULTIPLY("*"),
+		DIVIDE("/");
+
+		private String oper;
+		
+		public String getOper() {
+			return this.oper;
+		}
+		
+		Operator(String oper){
+			this.oper = oper;
+		}
+
+	}
+	@Test
+	public int fibonacci(int n) {
+	    if (n == 0) {
+	        return 0;
+	    }
+	    else if (n == 1) {
+	        return 1;
+	    }
+	    else {
+	        return fibonacci(n‐1) + fibonacci(n‐2);
+	    }
+	}
+
+
+}

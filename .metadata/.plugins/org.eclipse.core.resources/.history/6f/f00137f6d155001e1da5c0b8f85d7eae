@@ -1,0 +1,65 @@
+<%@page import="java.util.stream.Collectors"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="kr.or.ddit.calculate.NumericOperatorType"%>
+<%@page import="java.util.Objects"%>
+<%@page import="java.util.Map"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>/calForm.jsp</title>
+<jsp:include page="/includee/preScript.jsp" />
+</head>
+<body>
+<%
+	Map<String,String> errors = (Map) request.getAttribute("errors");
+	if(errors != null && ! errors.isEmpty()){
+		%>
+		<div class="error"><%=errors %></div>
+		
+		<%
+	}
+		%>
+<form id="calForm" method="post" onsubmit="submitHandler(event);">
+	<input type="number" name="leftOp" required value="${param.leftOp}"/>
+	<select name="operator" required >
+		<option value>연산자</option>
+		<%
+			String options = Arrays.stream(NumericOperatorType.values())
+					.map(e->String.format("<option value='%s'>%c</option>", e.name(), e.getSign())).collect(Collectors.joining("\n"));
+		%>
+		<%=options %>
+	</select>
+	<input type="number" name="rightOp" required value="${param.rightOp}" />
+	<input type="submit" value="=" />
+</form>
+<div id="resultArea">
+
+</div>
+<script>
+	calForm.operator.value = "${param.operator}";
+	function submitHandler(event){
+		event.preventDefault();
+		let settings = {
+			url : location.href,
+			method : calForm.action,
+			data : $(calForm).serialize(),
+			dataType : "html", // Accept Request Header : Content-Type Response Header
+			success : function(resp) {
+				$(resultArea).html(resp)
+			},
+			error : function(jqXhr, status, error) {
+				console.log("jqXhr : ", jqXhr);
+				console.log("status : ", status);
+				console.log("error : ", error);
+			}
+	
+		};
+		$.ajax(settings);
+		
+	}
+</script>
+</body>
+</html>
