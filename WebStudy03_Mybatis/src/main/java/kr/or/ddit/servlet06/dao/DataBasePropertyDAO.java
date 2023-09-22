@@ -10,16 +10,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kr.or.ddit.db.ConnectionFactory;
 import kr.or.ddit.vo.DataBasePropertyVO;
 
 
 // POJO(Plain Old Java Object)
+
 public class DataBasePropertyDAO {
 	public List<DataBasePropertyVO> selectDBPropertyList(){
 		List<DataBasePropertyVO> list = new ArrayList<>();
 		try(
-			Connection conn = ConnectionFactory.getConnection();
+//			Connection conn = ConnectionFactory.getConnection();
+			Connection conn = null;
 			Statement stmt =  conn.createStatement();
 		){
 		

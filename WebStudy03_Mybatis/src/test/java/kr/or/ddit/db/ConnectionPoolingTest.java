@@ -20,7 +20,7 @@ class ConnectionPoolingTest {
 	private static String user;
 	private static String password;
 	
-	
+	/*
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		Properties dbInfo = new Properties();
@@ -49,10 +49,10 @@ class ConnectionPoolingTest {
 			){}
 		}
 	}
+	*/
 	
 	
-	
-	
+	/*
 	@Test
 	void test3() throws SQLException {
 		BasicDataSource dataSource = new BasicDataSource();
@@ -67,7 +67,7 @@ class ConnectionPoolingTest {
 		}
 	}
 	
-	
+	*/
 	
 	
 	

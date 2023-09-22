@@ -1,0 +1,20 @@
+package kr.or.ddit.vo;
+
+import org.apache.commons.lang3.builder.ToStringExclude;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(of = "code")
+public class MemoVO {
+	private int code;
+	private String writer;
+	@JsonIgnore
+	@ToStringExclude
+	private String email;
+	private String wrdate;
+	private String content;
+}

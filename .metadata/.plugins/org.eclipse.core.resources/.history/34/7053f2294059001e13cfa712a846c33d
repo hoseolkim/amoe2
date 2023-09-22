@@ -1,0 +1,61 @@
+package kr.or.ddit.memo.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import kr.or.ddit.db.MemoSqlSessionFactoryBuilder;
+import kr.or.ddit.vo.MemoVO;
+
+public class MemoDAOImpl implements MemoDAO {
+	private static MemoDAO dao;
+	private SqlSessionFactory sqlSessionFactory;
+	
+	private MemoDAOImpl() {
+		sqlSessionFactory = MemoSqlSessionFactoryBuilder.getSqlSessionFactory();
+	}
+	
+	
+	@Override
+	public int insertMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<MemoVO> selectMemoList() {
+		List<MemoVO> memoList = new ArrayList<MemoVO>();
+		try(
+			
+		){
+			
+		}
+		
+		return null;
+	}
+
+	@Override
+	public MemoVO selectMemo(int code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateMemo(MemoVO memoVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteCheck(MemoVO memovO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteMemo(int code) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

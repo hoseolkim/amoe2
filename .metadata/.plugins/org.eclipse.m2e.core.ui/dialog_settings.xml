@@ -52,6 +52,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="MemoManagementApplication"/>
 			<item value="WebStudy02_MVN"/>
 		</list>
 		<list key="projectNameTemplate">

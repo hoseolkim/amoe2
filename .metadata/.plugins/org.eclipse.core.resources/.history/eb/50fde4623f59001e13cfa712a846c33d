@@ -1,0 +1,21 @@
+package kr.or.ddit.db;
+
+import java.io.IOException;
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class MemoSqlSessionFactoryBuilder {
+	private static SqlSessionFactoryBuilder sessionFactoryBuilder;
+	static {
+		String resource = "kr/or/ddit/db/dbInfo.properties";
+		try (
+			Reader reader = Resources.getResourceAsReader(resource);
+		){
+			sessionFactoryBuilder = new SqlSessionFactoryBuilder().build(reader);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+}
