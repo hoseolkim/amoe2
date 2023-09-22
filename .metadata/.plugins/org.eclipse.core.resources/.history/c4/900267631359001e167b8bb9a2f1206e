@@ -1,0 +1,29 @@
+package kr.or.ddit.vo;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+class MemberVOTest {
+
+	@Test
+	void test() throws JsonProcessingException {
+		
+		
+		
+		MemberVO target = new MemberVO();
+		target.setMemBir(LocalDate.now());
+		
+		String json = new ObjectMapper().writeValueAsString(target);
+		
+		System.out.println(json);
+		
+		
+	}
+
+}

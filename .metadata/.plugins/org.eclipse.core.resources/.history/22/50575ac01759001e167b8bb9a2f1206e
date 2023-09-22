@@ -1,0 +1,17 @@
+package kr.or.ddit.member.service;
+
+import kr.or.ddit.vo.MemberVO;
+
+/**
+ * 회원 정보 관리를 위한 Business Logic Layer
+ *
+ */
+public interface MemberService {
+	public boolean createMember(MemberVO member);
+//	retrieveMember
+//	retrieveMemberList
+//	modifyMember
+//	removeMember
+	
+	
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+$(function(){
+	let settings = {
+		data :"",
+		dataType : "json"
+	}
+	
+	
+	$.ajax(settings);
+});

@@ -1,0 +1,44 @@
+package kr.or.ddit.adrs.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import kr.or.ddit.db.CustomSqlSessionFactoryBuilder;
+import kr.or.ddit.vo.AddressVO;
+
+public class AddressDAOImpl implements AddressDAO {
+	private SqlSessionFactory sqlSessionFactory = CustomSqlSessionFactoryBuilder.getSqlSessionFactory();
+	
+	private int generateAdrsNo(Connection conn) throws SQLException {
+		
+		try(
+				sqlSessionFactory.openSession();
+		){
+			
+		}
+		
+	}
+	
+	@Override
+	public int insertAddress(AddressVO adrsVO) {
+	}
+
+	@Override
+	public List<AddressVO> selectAddressList(String memId) {
+	}
+
+	@Override
+	public int updateAddress(AddressVO adrsVO) {
+	}
+
+	@Override
+	public int deleteAddress(int adrsNo) {
+	}
+
+}

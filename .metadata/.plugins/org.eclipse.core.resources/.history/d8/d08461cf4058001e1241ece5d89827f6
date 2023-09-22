@@ -1,0 +1,29 @@
+package kr.or.ddit.adrs.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class AddressServiceImplTest {
+
+	@Test
+	void testCreateAddress() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testRetriveAddressList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testModifyAddress() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testRemoveAddress() {
+		fail("Not yet implemented");
+	}
+
+}

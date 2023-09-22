@@ -1,0 +1,29 @@
+package kr.or.ddit.adrs.dao;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class AddressDAOImplTest {
+
+	@Test
+	void testInsertAddress() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSelectAddressList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testUpdateAddress() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeleteAddress() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,32 @@
+package kr.or.ddit.member.service;
+
+import kr.or.ddit.common.enumpkg.ServiceResult;
+import kr.or.ddit.vo.MemberVO;
+
+/**
+ * 회원 정보 관리를 위한 Business Logic Layer
+ *
+ */
+public interface MemberService {
+	/**
+	 * 가입 처리
+	 * @param member
+	 * @return ServiceResult.PKDUPLICATED, OK, FAIL
+	 */
+	public ServiceResult createMember(MemberVO member);
+	
+	/**
+	 * 마이페이지용
+	 * @param memId
+	 * @return
+	 */
+	public MemberVO retrieveMember(String memId);
+	
+//	retrieveMemberList
+	
+//	modifyMember
+	
+//	removeMember
+	
+	
+}

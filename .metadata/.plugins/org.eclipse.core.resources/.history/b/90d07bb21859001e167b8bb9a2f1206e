@@ -1,0 +1,9 @@
+package kr.or.ddit.member;
+
+/**
+ * 아이디로 조회한 사용자가 존재하지 않는 경우
+ *
+ */
+public class UserNotFundException extends RuntimeException{
+
+}

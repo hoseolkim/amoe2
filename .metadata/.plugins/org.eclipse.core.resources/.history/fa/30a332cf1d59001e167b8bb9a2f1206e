@@ -1,0 +1,28 @@
+package kr.or.ddit.member.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+/**
+ *	목록 조회 : /member/memberList.do
+ *	마이페이지 : /mypage
+ *	정보 수정 : /member/memberUpdate.do
+ *	회원 탈퇴 : /member/memberDelete.do
+ *	회원 가입 : /member/memberInsert.do
+ *
+ * 모든 요청은 동기 html로
+ *
+ */
+@WebServlet("/member/memberList.do")
+public class MemberListControllerServlet extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+}

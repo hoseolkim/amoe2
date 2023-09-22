@@ -1,0 +1,11 @@
+package kr.or.ddit.db;
+
+/**
+ * A a = new A();
+ *
+ */
+public class ConnectionFactory {
+	static {
+		
+	}
+}

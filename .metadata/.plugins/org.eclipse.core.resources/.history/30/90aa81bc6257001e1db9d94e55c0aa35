@@ -1,0 +1,22 @@
+package kr.or.ddit.lang;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import kr.or.ddit.vo.MemberVO;
+
+class JustTest {
+
+	@Test
+	void test() {
+		
+		MemberVO mem = new MemberVO();
+		
+		mem.setMemAdd1(null);
+		
+		
+		
+	}
+
+}

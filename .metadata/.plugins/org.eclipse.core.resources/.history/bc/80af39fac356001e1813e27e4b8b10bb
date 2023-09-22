@@ -1,0 +1,9 @@
+package kr.or.ddit.servlet06.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/13/case2/jdbcDesc.do")
+public class DataBasePropertiesControllerServlet_case2 extends HttpServlet{
+
+}

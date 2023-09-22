@@ -1,0 +1,28 @@
+package kr.or.ddit.member.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import kr.or.ddit.common.exception.PersistenceException;
+import kr.or.ddit.db.ConnectionFactory;
+import kr.or.ddit.db.CustomSqlSessionFactoryBuilder;
+import kr.or.ddit.vo.MemberVO;
+
+public class MemberDAOImpl implements MemberDAO {
+	private SqlSessionFactory sqlSessionFactory = CustomSqlSessionFactoryBuilder.getSqlSessionFactory();
+	@Override
+	public MemberVO selectMemberForAuth(MemberVO inputData) {
+		try(
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+		){
+			return sqlSession.selectOne("kr.or.ddit.member.dao.MemberDAO.selectMemberForAuth",inputData);
+		}
+	}
+}

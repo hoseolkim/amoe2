@@ -1,0 +1,17 @@
+package kr.or.ddit.member.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+
+/**
+ *	목록 조회 : /member/memberList.do
+ *	마이페이지 : /mypage
+ *	정보 수정 : /member/memberUpdate.do
+ *	회원 탈퇴 : /member/memberDelete.do
+ *	가입 : /member/memberInsert.do 
+ *
+ */
+public class MemberListControllerServlet extends HttpServlet{
+
+}

@@ -1,0 +1,15 @@
+package kr.or.ddit.servlet06.service;
+
+import java.util.List;
+
+import kr.or.ddit.vo.DataBasePropertyVO;
+
+public class DataBasePropertyServiceImpl implements DataBasePropertyService {
+
+	@Override
+	public List<DataBasePropertyVO> retrieveDBPropertyList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.adrs.dao.AddressDAO">
+	<select id="" >
+	
+	</select>
+	<insert id="" parameterType="AddressVO" >
+		sql.append("INSERT INTO ADDRESSBOOK(");
+		sql.append("ADRS_NO,     ");
+		sql.append("MEM_ID,   ");
+		sql.append("ADRS_NAME,   ");
+		sql.append("ADRS_HP,    ");
+		sql.append("ADRS_ADD)   ");
+		sql.append(" values( #{adrsNo}, #{memId}, #{adrsName}, #{adrsHp}, #{adrsAdd} )");
+	</insert>
+</mapper>

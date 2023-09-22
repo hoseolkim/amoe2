@@ -1,0 +1,5 @@
+package kr.or.ddit.adrs.service;
+
+public interface AddressService {
+
+}

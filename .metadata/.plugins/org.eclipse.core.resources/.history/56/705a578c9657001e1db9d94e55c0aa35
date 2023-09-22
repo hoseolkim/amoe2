@@ -1,0 +1,19 @@
+package kr.or.ddit.lang;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import kr.or.ddit.reflect.ReflectionTest;
+
+class ReflectionDesc {
+
+	@Test
+	void test() {
+		Object obj = ReflectionTest.getObject();
+		
+		
+		
+	}
+
+}

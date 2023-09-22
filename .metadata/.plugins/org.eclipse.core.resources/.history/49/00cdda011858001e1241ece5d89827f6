@@ -1,0 +1,27 @@
+package kr.or.ddit.db;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+class ConnectionPoolingTest {
+	private static String url;
+	private static String user;
+	private static String password;
+	
+	
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+		
+		
+		
+		
+	}
+
+	@Test
+	void test() {
+		
+	}
+
+}

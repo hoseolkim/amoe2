@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+$(function(){
+	let settings = {
+		dataType : "json",
+		success : function(resp){
+			let result = "";
+			if(resp.list){
+				
+			}else{
+				
+			}
+		},
+		error : function(){
+			
+		}
+	}
+	
+	
+	$.ajax(settings);
+});

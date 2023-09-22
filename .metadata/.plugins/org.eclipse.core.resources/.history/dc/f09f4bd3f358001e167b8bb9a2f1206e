@@ -1,0 +1,63 @@
+package kr.or.ddit.adrs.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import kr.or.ddit.db.CustomSqlSessionFactoryBuilder;
+import kr.or.ddit.vo.AddressVO;
+
+public class AddressDAOImpl implements AddressDAO {
+	private SqlSessionFactory sqlSessionFactory = CustomSqlSessionFactoryBuilder.getSqlSessionFactory();
+	
+	private int generateAdrsNo(Connection conn) throws SQLException {
+		try(
+				SqlSession sqlSession = sqlSessionFactory.openSession();
+		){
+			return sqlSession.selectOne("kr.or.ddit.adrs.dao.AddressDAO.generateAdrsNo");
+		}
+	}
+	
+	@Override
+	public int insertAddress(AddressVO adrsVO) {
+		try(
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+		){
+			return sqlSession.insert("kr.or.ddit.adrs.dao.AddressDAO.insertAddress", adrsVO);
+		}
+	}
+
+	@Override
+	public List<AddressVO> selectAddressList(String memId) {
+		try(
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+		){
+			return sqlSession.selectList("kr.or.ddit.adrs.dao.AddressDAO.selectAddressList", memId);
+		}
+	}
+
+	@Override
+	public int updateAddress(AddressVO adrsVO) {
+		try(
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+		){
+			return sqlSession.update("kr.or.ddit.adrs.dao.AddressDAO.updateAddress",adrsVO);
+		}
+	}
+
+	@Override
+	public int deleteAddress(int adrsNo) {
+		try(
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+		){
+			return sqlSession.delete("kr.or.ddit.adrs.dao.AddressDAO.deleteAddress", adrsNo);
+		}
+	}
+
+}

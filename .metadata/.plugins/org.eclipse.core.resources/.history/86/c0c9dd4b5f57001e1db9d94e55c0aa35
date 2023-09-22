@@ -1,0 +1,13 @@
+package kr.or.ddit.login.service;
+
+import kr.or.ddit.vo.MemberVO;
+
+public class AuthenticateServiceImpl implements AuthenticateService {
+
+	@Override
+	public boolean authenticate(MemberVO inputData) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

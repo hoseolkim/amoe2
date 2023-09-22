@@ -1,0 +1,10 @@
+package kr.or.ddit.db;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class CustomSqlSessionFactoryBuilder {
+	private static SqlSessionFactory sqlSessionFactory;
+	static {
+		String configFile = "kr/or/ddit/mybatis/Configuration.xml";
+	}
+}

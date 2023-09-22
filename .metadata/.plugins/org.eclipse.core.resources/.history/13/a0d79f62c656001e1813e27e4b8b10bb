@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+$(function(){
+	let settings = {
+		data :"",
+		dataType : "json",
+		success : function(resp){
+			
+		},
+		error : function(){
+			
+		}
+	}
+	
+	
+	$.ajax(settings);
+});

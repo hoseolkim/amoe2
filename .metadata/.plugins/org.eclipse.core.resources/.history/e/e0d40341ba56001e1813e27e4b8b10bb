@@ -1,0 +1,10 @@
+package kr.or.ddit.vo;
+
+public class DataBasePropertyVO {
+	private String propertyName;
+	private String propertyValue;
+	private String description;
+	
+	
+	
+}

@@ -1,0 +1,28 @@
+package kr.or.ddit.db;
+
+import java.sql.Connection;
+
+/**
+ * A a1 = new A();
+ * A a2 = new A();
+ * 1. A 클래스가 로딩.
+ * 2. instance 생성(heap memory - GC 대상)
+ * 3. a1 에 생성된 인스턴스의 참조 주소 할당.
+ */
+public class ConnectionFactory {
+	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "pc17_2";
+	String password = "java";
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public Connection getConnection() {
+		
+	}
+	
+}

@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+$(function(){
+	let settings = {
+		method : "",
+		data :"",
+		dataType : ""
+	}
+	
+	
+	$.ajax(settings);
+});

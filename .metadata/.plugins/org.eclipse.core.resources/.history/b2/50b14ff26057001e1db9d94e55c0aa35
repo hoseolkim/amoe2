@@ -1,0 +1,29 @@
+package kr.or.ddit.member.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import kr.or.ddit.db.ConnectionFactory;
+import kr.or.ddit.vo.MemberVO;
+
+public class MemberDAOImpl implements MemberDAO {
+
+	@Override
+	public MemberVO selectMemberForAuth(MemberVO inputData) {
+		MemberVO result = null;
+		try {
+			Connection conn = ConnectionFactory.getConnection();
+			String sql = "select * from member where mem_id=? and mem_pass = ?"; 
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, inputData.getMemId());
+			pstmt.setString(2, inputData.getMemPass());
+			
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return result;
+	}
+
+}

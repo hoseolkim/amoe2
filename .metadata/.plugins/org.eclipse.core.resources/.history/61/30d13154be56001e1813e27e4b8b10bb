@@ -1,0 +1,8 @@
+package kr.or.ddit.servlet06.controller;
+
+public class Snippet {
+	public static void main(String[] args) {
+		DataBasePropertyVO
+	}
+}
+

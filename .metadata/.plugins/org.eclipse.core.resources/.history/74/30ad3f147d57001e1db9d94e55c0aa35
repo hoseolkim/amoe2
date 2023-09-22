@@ -1,0 +1,21 @@
+package kr.or.ddit.adrs.dao;
+
+import java.util.List;
+
+import kr.or.ddit.vo.AddressVO;
+
+/**
+ * 주소록 관리(CRUD) persistence layer
+ *
+ */
+public interface AddressDAO {
+	/**
+	 * 신규 주소 등록
+	 * @param adrsVO
+	 * @return 등록 성공시(>=1)
+	 */
+	public int insertAddress(AddressVO adrsVO);
+	public List<AddressVO> selectAddressList(String memId);
+//	update
+//	delete
+}

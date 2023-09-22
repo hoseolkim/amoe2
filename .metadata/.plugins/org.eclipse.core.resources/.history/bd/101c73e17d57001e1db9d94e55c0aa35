@@ -1,0 +1,14 @@
+package kr.or.ddit.adrs.service;
+
+import kr.or.ddit.vo.AddressVO;
+
+/**
+ * 주소록 관리를 위한 Business Logic Layer
+ *
+ */
+public interface AddressService {
+	public boolean createAddress(AddressVO adrsVO);
+//	retrive
+//	modify
+//	remove
+}

@@ -1,0 +1,32 @@
+package kr.or.ddit.adrs.service;
+
+import java.util.List;
+
+import kr.or.ddit.vo.AddressVO;
+
+/**
+ * 주소록 관리를 위한 Business Logic Layer
+ *
+ */
+public interface AddressService {
+	/**
+	 * @param adrsVO
+	 * @return
+	 */
+	public boolean createAddress(AddressVO adrsVO);
+	/**
+	 * @param memId
+	 * @return
+	 */
+	public List<AddressVO> retriveAddressList(String memId);
+	/**
+	 * @param adrsVO
+	 * @return
+	 */
+	public boolean modifyAddress(AddressVO adrsVO);
+	/**
+	 * @param adrsNo
+	 * @return
+	 */
+	public boolean removeAddress(int adrsNo);
+}
