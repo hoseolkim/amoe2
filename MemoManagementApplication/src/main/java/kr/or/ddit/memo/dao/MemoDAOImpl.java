@@ -10,28 +10,21 @@ import kr.or.ddit.vo.MemoVO;
 
 public class MemoDAOImpl implements MemoDAO {
 	private static MemoDAO dao;
-	private SqlSessionFactory sqlSessionFactory;
-	private MemoDAO mapper;
-	public static synchronized MemoDAO getMemoDAO() {
+	private SqlSessionFactory sqlSessionFactory = MemoSqlSessionFactoryBuilder.getSqlSessionFactory();
+	public static synchronized MemoDAO getInstance() {
 		if(dao==null) dao = new MemoDAOImpl();
 		return dao;
 	}
 	
-	private MemoDAOImpl() {
-		sqlSessionFactory = MemoSqlSessionFactoryBuilder.getSqlSessionFactory();
-		try(
-			SqlSession session = sqlSessionFactory.openSession();
-		){
-			mapper = session.getMapper(MemoDAO.class); 
-		}
-	}
+	private MemoDAOImpl() {}
 	
 	
 	@Override
 	public int insertMemo(MemoVO memoVO) {
 		try(
-			SqlSession session = sqlSessionFactory.openSession();
+			SqlSession session = sqlSessionFactory.openSession(true);
 		){
+			MemoDAO mapper = session.getMapper(MemoDAO.class); 
 			return mapper.insertMemo(memoVO);
 		}
 	}
@@ -41,6 +34,7 @@ public class MemoDAOImpl implements MemoDAO {
 		try(
 			SqlSession session = sqlSessionFactory.openSession();
 		){
+			MemoDAO mapper = session.getMapper(MemoDAO.class); 
 			return mapper.selectMemoList();
 		}
 	}
@@ -49,8 +43,9 @@ public class MemoDAOImpl implements MemoDAO {
 	@Override
 	public int updateMemo(MemoVO memoVO) {
 		try(
-			SqlSession session = sqlSessionFactory.openSession();
+			SqlSession session = sqlSessionFactory.openSession(true);
 		){
+			MemoDAO mapper = session.getMapper(MemoDAO.class); 
 			return mapper.updateMemo(memoVO);
 		}
 	}
@@ -58,8 +53,9 @@ public class MemoDAOImpl implements MemoDAO {
 	@Override
 	public int deleteMemo(int code) {
 		try(
-			SqlSession session = sqlSessionFactory.openSession();
+			SqlSession session = sqlSessionFactory.openSession(true);
 		){
+			MemoDAO mapper = session.getMapper(MemoDAO.class); 
 			return mapper.deleteMemo(code);
 		}
 	}

@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+$(function(){
+	let baseUrl = "/memo"
+	$.getJSON()
+	
+	
+	
+	
+	
+	
+});

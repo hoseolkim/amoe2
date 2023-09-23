@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=WebStudy03_Mybatis/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.member.service{MemberService.java[MemberService" modifiers="513" timestamp="1695390228399"/>
-    <typeInfo handle="=MemoManagementApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.memo.dao{MemoDAO.java[MemoDAO" modifiers="513" timestamp="1695390228284"/>
-    <typeInfo handle="=MemoManagementApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.memo.dao{MemoAthenticateDAO.java[MemoAthenticateDAO" modifiers="513" timestamp="1695392498261"/>
-    <typeInfo handle="=MemoManagementApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.memo.service{MemoService.java[MemoService" modifiers="513" timestamp="1695390228284"/>
+    <typeInfo handle="=MemoManagementApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.memo.dao{MemoDAO.java[MemoDAO" modifiers="513" timestamp="1695426381311"/>
+    <typeInfo handle="=MemoManagementApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.memo.dao{MemoAthenticateDAO.java[MemoAthenticateDAO" modifiers="513" timestamp="1695426381310"/>
+    <typeInfo handle="=MemoManagementApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.or.ddit.memo.service{MemoService.java[MemoService" modifiers="513" timestamp="1695426381315"/>
 </typeInfoHistroy>

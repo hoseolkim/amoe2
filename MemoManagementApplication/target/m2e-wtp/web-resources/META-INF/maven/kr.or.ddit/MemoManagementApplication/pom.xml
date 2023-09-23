@@ -54,6 +54,12 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.5.13</version>
 		</dependency>
+	<!-- Mybatis LocalDateTime Mapping 지원 -->
+	<dependency>
+	  <groupId>org.mybatis</groupId>
+	  <artifactId>mybatis-typehandlers-jsr310</artifactId>
+	  <version>1.0.2</version>
+	</dependency>
 	
 	<!-- VO Annotation 지원 -->
 	<dependency>

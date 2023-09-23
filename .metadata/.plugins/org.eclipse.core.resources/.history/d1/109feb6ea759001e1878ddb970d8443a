@@ -1,0 +1,29 @@
+package kr.or.ddit.memo.dao;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MemoDAOImplTest {
+
+	@Test
+	void testInsertMemo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSelectMemoList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testUpdateMemo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeleteMemo() {
+		fail("Not yet implemented");
+	}
+
+}

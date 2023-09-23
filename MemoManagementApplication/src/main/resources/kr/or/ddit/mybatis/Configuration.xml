@@ -8,6 +8,9 @@
 	<typeAliases>
 		<package name="kr.or.ddit.vo"/>
 	</typeAliases>
+	<typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.LocalDateTypeHandler" jdbcType="DATE" javaType="java.time.LocalDate"  />
+    </typeHandlers>
 	<environments default="dev">
 		<environment id="dev">
 			<transactionManager type="JDBC" />
@@ -24,5 +27,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="kr/or/ddit/mybatis/mapper/Memo.xml" />
+		<mapper resource="kr/or/ddit/mybatis/mapper/MemoAthenticate.xml" />
 	</mappers>
 </configuration>

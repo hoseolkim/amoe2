@@ -12,23 +12,19 @@
 		    MEMO
 	</select>
 	<insert id="insertMemo" parameterType="MemoVO">
-		<selectKey keyProperty="code" order="BEFORE">
-			SELECT NVL(MAX(CODE),0) FROM MEMO
+		<selectKey keyProperty="code" order="BEFORE" resultType="Integer">
+			SELECT NVL(MAX(CODE),0)+1 FROM MEMO
 		</selectKey>
 		INSERT INTO memo (
 		    code, writer, email,
-		    content
+		    content , wrdate
 		) VALUES (
 		    #{code},
 		    #{writer},
 		    #{email},
-		    #{content}
+		    #{content},
+		    #{wrdate}
 		)
-		<selectKey keyProperty="wrdate" order="AFTER">
-			SELECT WRDATE
-			FROM MEMO
-			WHERE CODE = #{code}
-		</selectKey>
 	</insert>
 	<update id="updateMemo" parameterType="MemoVO">
 		UPDATE
@@ -38,7 +34,7 @@
 			, CONTENT = #{content}
 		WHERE
 			CODE = #{code}
-		<selectKey keyProperty="wrdate" order="AFTER">
+		<selectKey keyProperty="wrdate" order="AFTER" resultType="java.time.LocalDate">
 			SELECT WRDATE
 			FROM MEMO
 			WHERE CODE = #{code}

@@ -1,0 +1,32 @@
+package kr.or.ddit.memo.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.ddit.memo.service.MemoAthenticateService;
+import kr.or.ddit.memo.service.MemoAthenticateServiceImpl;
+import kr.or.ddit.memo.service.MemoService;
+
+@WebServlet({"/memo","/memo/*"})
+public class MemoControllerServlet extends HttpServlet{
+	
+	private MemoAthenticateService authService;
+	private MemoService service;
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		authService = MemoAthenticateServiceImpl.getMemoAthenticateService();
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+}

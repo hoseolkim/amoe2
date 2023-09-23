@@ -7,15 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%
-	List<MemberVO> memberList = (List<MemberVO>) request.getAttribute("memberList");
-	StringBuffer sb = new StringBuffer();
-
-	String ptrn = "<tr data-mem-id='%s'><td>%s[%s]</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>";
-	for(MemberVO member : memberList){
-		sb.append(String.format(ptrn,member.getMemId(),member.getMemName(),member.getProdCount(),member.getMemHp(),member.getMemMail(),member.getMemBir(),member.getMemAdd1(),member.getMemMileage()!=null?member.getMemMileage():0));
-	}
-%>
 </head>
 <body>
 <table>
@@ -30,8 +21,42 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= sb.toString() %>
+	<%
+		List<MemberVO> memberList = (List) request.getAttribute("memberList");
+		if(memberList.isEmpty()){
+			%>
+			<tr>
+				<td colspan="5">검색 조건에 맞는 회원 없음.</td>
+			</tr>
+			<%
+		}else{
+			for(MemberVO member : memberList){
+				%>
+				<tr data-mem-id="<%=member.getMemId()%>">
+					<td><%=member.getMemName() %>[<%=member.getProdCount() %>]</td>
+					<td><%=member.getMemHp() %></td>
+					<td><%=member.getMemMail() %></td>
+					<td><%=member.getMemBir() %></td>
+					<td><%=member.getMemAdd1() %></td>
+					<td><%=member.getMemMileage() %></td>
+				</tr>
+				<%
+			}			
+		}
+	%>
 	</tbody>
 </table>
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
 </html>

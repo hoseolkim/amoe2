@@ -8,28 +8,22 @@ import kr.or.ddit.vo.MemoVO;
 
 public class MemoAthenticateDAOImpl implements MemoAthenticateDAO {
 	private static MemoAthenticateDAO dao;
-	private SqlSessionFactory sqlSessionFactory;
-	private MemoAthenticateDAO mapper;
+	private SqlSessionFactory sqlSessionFactory  = MemoSqlSessionFactoryBuilder.getSqlSessionFactory();
 	
-	public static synchronized MemoAthenticateDAO getMemoAthenticateDAO() {
+	
+	public static synchronized MemoAthenticateDAO getInstance() {
 		if(dao==null) dao = new MemoAthenticateDAOImpl();
 		return dao;
 	}
 	
-	private MemoAthenticateDAOImpl() {
-		sqlSessionFactory = MemoSqlSessionFactoryBuilder.getSqlSessionFactory();
-		try(
-			SqlSession session = sqlSessionFactory.openSession();
-		){
-			mapper = session.getMapper(MemoAthenticateDAO.class); 
-		}
-	}
+	private MemoAthenticateDAOImpl() {}
 	
 	@Override
 	public int memoAthenticate(MemoVO memovO) {
 		try(
 			SqlSession session = sqlSessionFactory.openSession();
 		){
+			MemoAthenticateDAO mapper = session.getMapper(MemoAthenticateDAO.class); 
 			return mapper.memoAthenticate(memovO);
 		}
 	}

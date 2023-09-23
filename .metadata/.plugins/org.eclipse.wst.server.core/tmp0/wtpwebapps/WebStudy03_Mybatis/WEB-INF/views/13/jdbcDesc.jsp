@@ -1,5 +1,4 @@
 <%@page import="kr.or.ddit.vo.DataBasePropertyVO"%>
-<%@page import="kr.or.ddit.db.ConnectionFactory"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.ArrayList"%>

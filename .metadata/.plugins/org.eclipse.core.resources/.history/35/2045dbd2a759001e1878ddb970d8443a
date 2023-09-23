@@ -1,0 +1,39 @@
+package kr.or.ddit.memo.dao;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import kr.or.ddit.vo.MemoVO;
+
+class MemoDAOImplTest {
+
+	MemoDAO dao = MemoDAOImpl.getInstance();
+	
+	
+	@Test
+	void testInsertMemo() {
+		MemoVO memoVO = new MemoVO();
+		memoVO.setContent(null);
+		memoVO.setEmail(null);
+		memoVO.setWriter(null);
+		
+		dao.insertMemo(memoVO);
+	}
+
+	@Test
+	void testSelectMemoList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testUpdateMemo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeleteMemo() {
+		fail("Not yet implemented");
+	}
+
+}

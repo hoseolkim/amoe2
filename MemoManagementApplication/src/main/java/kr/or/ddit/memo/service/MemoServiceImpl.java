@@ -8,12 +8,12 @@ import kr.or.ddit.memo.dao.MemoDAOImpl;
 import kr.or.ddit.vo.MemoVO;
 
 public class MemoServiceImpl implements MemoService {
-	private MemoDAO dao = MemoDAOImpl.getMemoDAO();
-	private MemoAthenticateService authService = MemoAthenticateServiceImpl.getMemoAthenticateService();
+	private MemoDAO dao = MemoDAOImpl.getInstance();
+	private MemoAthenticateService authService = MemoAthenticateServiceImpl.getInstance();
 	
 	private static MemoService service;
 	private MemoServiceImpl() {}
-	public static MemoService getMemoService() {
+	public static MemoService getInstacne() {
 		if(service == null) service = new MemoServiceImpl();
 		return service;
 	}

@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+$(function(){
+	const baseUrl = "/memo";
+	$.getJSON(baseUrl)
+		.done((resp)=>{
+			let list =resp.memoList;
+			code = "";
+			if(list.length>0){
+				
+			}else{
+				code ="<tr id='no-memo'><td colspan='3'>작성된 메모가 없습니다</td></tr>";
+			}
+		});
+	
+	
+	
+	
+	
+	
+});

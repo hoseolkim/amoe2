@@ -95,10 +95,12 @@
 	    <scope>test</scope>
 	</dependency>
 	<!-- reflection 특강용 -->
+	<!--
 	<dependency>
 		<groupId>kr.or.ddit</groupId>
 		<artifactId>reflectionTest</artifactId>
 		<version>1.0</version>
 	</dependency>
+	-->
 </dependencies>
 </project>

@@ -1,0 +1,42 @@
+package kr.or.ddit.memo.dao;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+
+import kr.or.ddit.vo.MemoVO;
+
+class MemoDAOImplTest {
+
+	
+	
+	@Test
+	void testInsertMemo() {
+		MemoDAO dao = MemoDAOImpl.getInstance();
+		MemoVO memoVO = new MemoVO();
+		memoVO.setContent("테스트용2");
+		memoVO.setEmail("loveclimax94@naver.com");
+		memoVO.setWriter("김석호");
+		memoVO.setWrdate(LocalDate.now());
+		
+		dao.insertMemo(memoVO);
+	}
+
+	@Test
+	void testSelectMemoList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testUpdateMemo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeleteMemo() {
+		fail("Not yet implemented");
+	}
+
+}

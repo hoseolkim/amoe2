@@ -1,0 +1,47 @@
+package kr.or.ddit.memo.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.ddit.memo.service.MemoAthenticateService;
+import kr.or.ddit.memo.service.MemoAthenticateServiceImpl;
+import kr.or.ddit.memo.service.MemoService;
+import kr.or.ddit.memo.service.MemoServiceImpl;
+import kr.or.ddit.vo.MemoVO;
+
+@WebServlet({"/memo","/memo/*"})
+public class MemoControllerServlet extends HttpServlet{
+	
+	private MemoAthenticateService authService;
+	private MemoService service;
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		authService = MemoAthenticateServiceImpl.getInstance();
+		service = MemoServiceImpl.getInstacne();
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<MemoVO> memoList = service.retrieveMemoList();
+		
+		req.setAttribute("memoList", memoList);
+		String goPage = "/jsonView.view";
+		
+		if(goPage.startsWith("redirect:")) {
+			String location = req.getContextPath() + goPage.substring("redirect:".length());
+			resp.sendRedirect(location);
+		}else {
+			req.getRequestDispatcher(goPage).forward(req, resp);
+		}
+		
+	}
+}
